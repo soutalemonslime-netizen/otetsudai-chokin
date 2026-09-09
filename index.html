@@ -38,9 +38,9 @@
           <p id="remainingLabel">あと100円まで</p>
         </article>
         <article class="summary-card summary-card--total">
-          <div class="summary-label"><span class="dot dot--gold"></span>累計おこづかい</div>
-          <strong><span id="totalAmount">0</span><small>円</small></strong>
-          <p>承認されたお手伝いの合計</p>
+          <div class="summary-label"><span class="dot dot--gold"></span>使えるおこづかい</div>
+          <strong><span id="balanceAmount">0</span><small>円</small></strong>
+          <p>累計 <span id="totalAmount">0</span>円 ・ 使用 <span id="spentAmount">0</span>円</p>
         </article>
       </section>
 
@@ -54,6 +54,14 @@
           <div class="section-heading compact"><div><p class="eyebrow">ACTIVITY</p><h2>今日のようす</h2></div></div>
           <div id="childHistory" class="activity-list"></div>
         </section>
+        <section class="money-section">
+          <div class="section-heading compact"><div><p class="eyebrow">USE MONEY</p><h2>おこづかいをつかう</h2></div></div>
+          <form id="spendForm" class="money-form">
+            <label>いくら？<input id="spendAmount" type="number" min="1" step="1" placeholder="例：100" required /></label>
+            <label>なにつかった？<input id="spendNote" type="text" maxlength="30" placeholder="例：おやつ" required /></label>
+            <button class="money-button money-button--spend" type="submit">使ったことを記録</button>
+          </form>
+        </section>
       </div>
 
       <div id="parentView" class="view-panel is-hidden">
@@ -63,6 +71,14 @@
         </div>
         <div class="parent-note"><span class="note-icon">✓</span><span>内容を確認して、承認か却下をえらんでね。</span></div>
         <div id="parentRequests" class="request-list"></div>
+        <section class="money-section">
+          <div class="section-heading compact"><div><p class="eyebrow">GIVE MONEY</p><h2>おこづかいを渡す</h2></div></div>
+          <form id="giftForm" class="money-form">
+            <label>いくら？<input id="giftAmount" type="number" min="1" step="1" placeholder="例：500" required /></label>
+            <label>メモ<input id="giftNote" type="text" maxlength="30" placeholder="例：今月分" required /></label>
+            <button class="money-button money-button--gift" type="submit">おこづかいを渡す</button>
+          </form>
+        </section>
         <section class="history-section">
           <div class="section-heading compact"><div><p class="eyebrow">ALL RECORDS</p><h2>これまでの記録</h2></div></div>
           <div id="parentHistory" class="activity-list"></div>
