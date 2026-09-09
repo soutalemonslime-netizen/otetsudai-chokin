@@ -1,0 +1,9 @@
+{
+  "name": "おてつだい貯金",
+  "short_name": "おてつだい貯金",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f3ec",
+  "theme_color": "#f7f3ec",
+  "lang": "ja"
+}

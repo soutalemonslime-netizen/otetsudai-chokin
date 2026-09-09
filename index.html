@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f3ec" />
+    <link rel="manifest" href="manifest.json" />
+    <title>おてつだい貯金</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">¥</span><span>おてつだい貯金</span></div>
+        <div class="role-switch" aria-label="表示する画面">
+          <button class="role-button is-active" data-role="child">こども</button>
+          <button class="role-button" data-role="parent">おかあさん</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">TODAY'S POCKET MONEY</p>
+          <h1 id="greeting">今日のおてつだい</h1>
+          <p class="hero-date" id="todayLabel"></p>
+        </div>
+        <div class="coin-illustration" aria-hidden="true"><span>¥</span></div>
+      </section>
+
+      <section class="summary-grid" aria-label="おこづかいサマリー">
+        <article class="summary-card summary-card--today">
+          <div class="summary-label"><span class="dot dot--coral"></span>今日の獲得</div>
+          <strong><span id="todayAmount">0</span><small>円</small></strong>
+          <div class="progress-track"><div class="progress-bar" id="dailyProgress"></div></div>
+          <p id="remainingLabel">あと100円まで</p>
+        </article>
+        <article class="summary-card summary-card--total">
+          <div class="summary-label"><span class="dot dot--gold"></span>累計おこづかい</div>
+          <strong><span id="totalAmount">0</span><small>円</small></strong>
+          <p>承認されたお手伝いの合計</p>
+        </article>
+      </section>
+
+      <div id="childView" class="view-panel">
+        <div class="section-heading">
+          <div><p class="eyebrow">CHOOSE ONE</p><h2>おてつだいをえらぶ</h2></div>
+          <span class="count-pill" id="taskCount">0 / 100円</span>
+        </div>
+        <div class="task-list" id="taskList"></div>
+        <section class="history-section">
+          <div class="section-heading compact"><div><p class="eyebrow">ACTIVITY</p><h2>今日のようす</h2></div></div>
+          <div id="childHistory" class="activity-list"></div>
+        </section>
+      </div>
+
+      <div id="parentView" class="view-panel is-hidden">
+        <div class="section-heading">
+          <div><p class="eyebrow">MOM'S DESK</p><h2>申請を確認する</h2></div>
+          <span class="count-pill count-pill--alert" id="pendingCount">0件</span>
+        </div>
+        <div class="parent-note"><span class="note-icon">✓</span><span>内容を確認して、承認か却下をえらんでね。</span></div>
+        <div id="parentRequests" class="request-list"></div>
+        <section class="history-section">
+          <div class="section-heading compact"><div><p class="eyebrow">ALL RECORDS</p><h2>これまでの記録</h2></div></div>
+          <div id="parentHistory" class="activity-list"></div>
+        </section>
+      </div>
+
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      <footer>家族だけでつかう、今日の小さな貯金。</footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
